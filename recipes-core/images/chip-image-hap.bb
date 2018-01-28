@@ -10,4 +10,5 @@ IMAGE_INSTALL += " \
   ldd \
   openssh \
   mdns \
+  chip-hw \
 "
