@@ -3,8 +3,8 @@ ctrl_interface_group=0
 update_config=1
 
 network={
-	ssid="HAPTEST"
-	psk="haptestnet"
+	ssid="KAZ@HOME"
+	psk="kazakovy"
 	proto=RSN
 	key_mgmt=WPA-PSK
 	pairwise=CCMP

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+DAEMON=/usr/bin/HapLinux
+BACKGROUND="--background"
+
+test -r $DAEMON || exit 0
+
+START="start-stop-daemon --start $BACKGROUND --exec"
+STOP="start-stop-daemon --stop --oknodo --exec"
+
+case "$1" in
+    start)
+        echo "Starting HomeKit Accessory Protocol daemon"
+        $START $DAEMON
+        ;;
+    stop)
+        echo "Stopping HomeKit Accessory Protocol daemon"
+        $STOP $DAEMON
+        ;;
+    restart)
+        echo "Restarting HomeKit Accessory Protocol daemon"
+        $STOP $DAEMON
+        $START $DAEMON
+        ;;
+    *)
+        echo "Usage: /etc/init.d/hap {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0
